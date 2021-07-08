@@ -1,22 +1,30 @@
 import initialLoad from './initial-load';
-// import loadHome from './home';
-// import loadMenu from './menu';
-// import loadContact from './contact';
+import loadHome from './home';
+import loadMenu from './menu';
+import loadContact from './contact';
 
+// First page load, load in header, nav and footer then loads the home page
 initialLoad();
+loadHome();
 
-// function component() {
-//     const element = document.createElement('div');
-//     const btn = document.createElement('button');
+const loadPage = (id) => {
+    if (id === 'Home') {
+        loadHome();
+    } else if (id === 'Menu') {
+        loadMenu();
+    } else if (id === 'Contact') {
+        loadContact();
+    } else {
+        console.log("thats not a page? how'd you get here?");
+    }
+};
 
-//     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-//     btn.innerHTML = 'Click me and check the console!';
-//     btn.onclick = printMe;
-
-//     element.appendChild(btn);
-
-//     return element;
-// }
-
-// document.body.appendChild(component());
+// Selectors for buttons
+const navButtons = document
+    .getElementById('header')
+    .querySelectorAll('button')
+    .forEach((item) => {
+        item.addEventListener('click', (event) => {
+            loadPage(item.id);
+        });
+    });
