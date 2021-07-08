@@ -14,7 +14,6 @@ const writeElements = (() => {
         const headerTitle = document.createElement('h1');
         headerTitle.textContent = "Josh's Pizzas";
         header.appendChild(headerTitle);
-
         header.appendChild(writeNavBar());
         return header;
     };
@@ -26,6 +25,7 @@ const writeElements = (() => {
         const span = document.createElement('span');
         span.textContent = buttonTitle;
         button.appendChild(span);
+
         return button;
     };
 
@@ -58,6 +58,8 @@ const writeElements = (() => {
     return { writeMain, writeHeader, writeFooter };
 })();
 
+// Initial load of the page, loads in the header, footer and main
+// elements.
 const initialLoad = () => {
     const body = document.querySelector('body');
 
@@ -74,8 +76,6 @@ const initialLoad = () => {
     // main.appendChild(loadHome());
 
     body.appendChild(content);
-
-    // return content;
 };
 
 export default initialLoad;
