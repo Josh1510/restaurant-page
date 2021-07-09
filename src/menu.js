@@ -1,4 +1,8 @@
-import TestImg from `./images/cheese.png`;
+import cheeseImg from './images/cheese.png';
+import mushroomImg from './images/mushroom.png';
+import noToppingImg from './images/noToppings.png';
+import olivesImg from './images/olives.png';
+import pepperoniImg from './images/pepperoni.png';
 
 const pizzaMenu = [];
 
@@ -10,9 +14,8 @@ class Pizza {
         this.image = image;
 
         Pizza.addToMenu(this);
-     
     }
-    
+
     get name() {
         return this._name;
     }
@@ -93,32 +96,27 @@ const cheesePizza = new Pizza(
     'Cheese',
     'Tomato base, Mozzarella',
     10,
-    `cheese.jpg`
+    cheeseImg
 );
 const mushroomPizza = new Pizza(
     'Mushroom',
     'Tomato base, Mushrooms, Mozzarella',
     11,
-    '\\images\\mushroom.png'
+    mushroomImg
 );
 const olivePizza = new Pizza(
     'Olive',
     'Tomato base, Olives, Mozzarella',
     11,
-    '\\images\\olives.png'
+    olivesImg
 );
 const pepperoniPizza = new Pizza(
     'Pepperoni',
     'Tomato base, Pepperoni, Mozzarella',
     12,
-    '\\images\\pepperoni.png'
+    pepperoniImg
 );
-const noToppingPizza = new Pizza(
-    'No Toppings',
-    'Tomato base',
-    6,
-    '\\images\\noToppings.png'
-);
+const noToppingPizza = new Pizza('No Toppings', 'Tomato base', 6, noToppingImg);
 
 const loadMenu = () => {
     console.log('menu loading');
@@ -135,7 +133,7 @@ const loadMenu = () => {
     });
 
     mainContent.appendChild(menuConainerDiv);
-    console.log(pizzaMenu);
+
     console.log('menu loaded~');
 };
 
