@@ -3,9 +3,8 @@ const loadHome = () => {
 
     let mainContent = document.getElementById('content');
 
-    const resetPage = () => {
-        mainContent.innerHTML = '';
-    };
+    // reset page
+    mainContent.innerHTML = '';
 
     const homeContent = () => {
         // Load in home page content
@@ -25,7 +24,6 @@ const loadHome = () => {
         mainContent.appendChild(widgetDiv);
     };
 
-    resetPage();
     homeContent();
     console.log('home loaded~');
 };
